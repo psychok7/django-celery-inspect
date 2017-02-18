@@ -7,7 +7,7 @@ The main idea is to be able to monitor celery workers from another external serv
 
 ## Quick start
 
-1. Install
+1. Install:
 
 		pip install django-celery-inspect
 
@@ -23,20 +23,29 @@ The main idea is to be able to monitor celery workers from another external serv
 
 		url(r'^api/v1/celery-inspect/', include('celery_inspect.urls', namespace='celery_inspect')),
     
-4. That's it.
+4. If you Desire to use DRF's Authentication to protect these endpoints (Optional).
+
+		REST_FRAMEWORK = {
+		    'DEFAULT_AUTHENTICATION_CLASSES': (
+			'rest_framework.authentication.TokenAuthentication',
+		    ),
+		    'DEFAULT_PERMISSION_CLASSES': (
+			'rest_framework.permissions.IsAuthenticated',
+		    ),
+		}
 
 ## Usage:
 
 1. http://localhost:8000/api/v1/celery-inspect/ping/
 
 		{
-        "worker2@localhost:8000": {
-            "ok": "pong"
-        },
-        "worker1@localhost:8000": {
-            "ok": "pong"
-        }
-        }
+			"worker2@localhost:8000": {
+			    "ok": "pong"
+			},
+			"worker1@localhost:8000": {
+			    "ok": "pong"
+			}
+        	}
         
 2. http://localhost:8000/api/v1/celery-inspect/active/
 
