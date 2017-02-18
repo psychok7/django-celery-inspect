@@ -1,0 +1,5 @@
+
+# Include docs in the root.
+include LICENSE
+include README.md
+include CONTRIBUTORS.md
