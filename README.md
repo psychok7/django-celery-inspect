@@ -1,6 +1,6 @@
 # django-celery-inspect
 
-Django Reusable app that uses Celery Inspect command to monitor workers via the [Django REST Framework](https://github.com/tomchristie/django-rest-framework).
+Django reusable-app that uses Celery Inspect command to monitor workers via the [Django REST Framework](https://github.com/tomchristie/django-rest-framework).
 
 The main idea is to be able to monitor celery workers from another external service or server via a REST API and figure out if they are running or not by using celery's own [Inspect API]
 (http://docs.celeryproject.org/en/latest/userguide/workers.html#inspecting-workers).
@@ -61,16 +61,16 @@ The main idea is to be able to monitor celery workers from another external serv
                 "core.tasks.db_backup",
                 "core.tasks.send_queued_emails",
                 "yy.tasks.assign_to_mongo",
-                "xx.tasks.check_for_new_registered_rnal_",
-                "xx.tasks.create_and_associate_manager_with_entity",
+                "xx.tasks.check_for_new_registered",
+                "xx.tasks.create_and_associate_manager",
                 "qq.celery.debug_task"
             ],
             "worker1@localhost:8000": [
                 "core.tasks.db_backup",
                 "core.tasks.send_queued_emails",
                 "yy.tasks.assign_to_mongo",
-                "xx.tasks.check_for_new_registered_rnal_",
-                "xx.tasks.create_and_associate_manager_with_entity",
+                "xx.tasks.check_for_new_registered",
+                "xx.tasks.create_and_associate_manager",
                 "qq.celery.debug_task"
             ]
         }
