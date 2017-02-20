@@ -81,3 +81,13 @@ The main idea is to be able to monitor celery workers from another external serv
             "worker2@localhost:8000": [],
             "worker1@localhost:8000": []
         }
+
+
+
+### If for some reason you can only deal with status codes (This feature will only work if you have django-celery installed)
+
+5. http://localhost:8000/api/v1/celery-inspect/active-status/
+
+    - Returns 200 if all workers in WorkerState are up.
+    - Returns 404 if workers are down (WorkerState != then inspect()).
+    - Returns 501 if djcelery a.k.a django-celery is not installed.

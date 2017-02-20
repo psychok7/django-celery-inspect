@@ -4,8 +4,9 @@ from celery_inspect.api.viewsets import CeleryInspectViewSet
 
 
 ping = CeleryInspectViewSet.as_view({'get': 'ping'})
-registered = CeleryInspectViewSet.as_view({'get': 'registered'})
 active = CeleryInspectViewSet.as_view({'get': 'active'})
+active_status = CeleryInspectViewSet.as_view({'get': 'active_status'})
+registered = CeleryInspectViewSet.as_view({'get': 'registered'})
 scheduled = CeleryInspectViewSet.as_view({'get': 'scheduled'})
 
 
@@ -14,8 +15,9 @@ scheduled = CeleryInspectViewSet.as_view({'get': 'scheduled'})
 # http://www.django-rest-framework.org/tutorial/6-viewsets-and-routers/#binding-viewsets-to-urls-explicitly
 urlpatterns = [
     url(r'^ping/$', ping, name='ping'),
-    url(r'^registered/$', registered, name='registered'),
     url(r'^active/$', active, name='active'),
+    url(r'^active-status/$', active_status, name='active_status'),
+    url(r'^registered/$', registered, name='registered'),
     url(r'^scheduled/$', scheduled, name='scheduled'),
 ]
 
