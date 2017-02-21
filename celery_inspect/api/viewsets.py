@@ -46,7 +46,7 @@ class CeleryInspectViewSet(viewsets.ViewSet):
         count_workers = WorkerState.objects.all().count()
         result = self.inspect.active()
 
-        if count_workers == len(result):
+        if result is not None and count_workers == len(result):
             return Response(status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_404_NOT_FOUND)

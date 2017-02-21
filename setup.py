@@ -12,7 +12,7 @@ from os import path
 # http://peterdowns.com/posts/first-time-with-pypi.html
 
 
-VERSION = '0.2'
+VERSION = '0.2.1'
 
 here = path.abspath(path.dirname(__file__))
 
